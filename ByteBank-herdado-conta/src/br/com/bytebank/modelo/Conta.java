@@ -1,5 +1,9 @@
 package br.com.bytebank.modelo;
-
+/**
+ * 
+ * @author c101597
+ *
+ */
 public abstract class Conta {
 
 	protected double saldo;
@@ -10,7 +14,7 @@ public abstract class Conta {
 
 	public Conta(int agencia, int numero){
 		Conta.total++;
-		//System.out.println("O total de contas abertas é " + Conta.total);
+		//System.out.println("O total de contas abertas: " + Conta.total);
 		this.agencia = agencia;
 		this.numero = numero;
 	}
@@ -68,5 +72,11 @@ public abstract class Conta {
 
 	public static int getTotal(){
 			return Conta.total;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "Numero: " + this.getNumero() + ", Agencia: " + this.getAgencia();
 	}
 }
