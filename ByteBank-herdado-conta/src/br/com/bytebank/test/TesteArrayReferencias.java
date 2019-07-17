@@ -6,21 +6,30 @@ public class TesteArrayReferencias {
 
 	public static void main(String[] args) {
 	
-		ContaCorrente[] contas = new ContaCorrente[5];
+		//Conta[] contas = new Conta[5];
+		
+		Object[] referencias = new Object[5];  //guarda qualquer tipo de objeto
 		
 		ContaCorrente cc1 = new ContaCorrente(1650, 776644);
 		
-		contas[0] = cc1;
+		referencias[0] = cc1;
 	
-		ContaCorrente cc2 = new ContaCorrente(1650, 776555);
+		ContaPoupanca cc2 = new ContaPoupanca(1650, 776555);
 		
-		contas[1] = cc2;
+		referencias[1] = cc2;
 		
-		System.out.println(contas[1].getNumero());
+		Cliente cliente = new Cliente();
+		referencias[2] = cliente;
 		
-		ContaCorrente ref = contas[1];
+		ContaCorrente refc = (ContaCorrente) referencias[0];
 		
-		System.out.println(ref.getNumero());
+		System.out.println(refc.getNumero());
+		
+		ContaPoupanca refp = (ContaPoupanca) referencias[1]; //type cast
+		
+		//ContaCorrente ref = (ContaCorrente) contas[1]; //type cast
+		
+		System.out.println(refp.getNumero());
 
 	}
 
