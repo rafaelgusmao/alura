@@ -1,8 +1,10 @@
 package br.com.bytebank.test.util;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 import br.com.bytebank.modelo.Conta;
 import br.com.bytebank.modelo.ContaCorrente;
@@ -11,9 +13,13 @@ public class TesteArrayList {
 
 	public static void main(String[] args) {
 		
-		List<Conta> lista = new LinkedList<Conta>();
+		//List<Conta> lista = new LinkedList<Conta>();
 		
 		//List<Conta> lista = new ArrayList<Conta>();
+		
+		//List<Conta> lista = new Vector<Conta>();
+		
+		Collection<Conta> lista = new Vector<Conta>(); // Forma mais genérica, mas Colletion nao tem as funcionalidades de indices.
 		
 		Conta cc = new ContaCorrente(1650, 65551);
 		lista.add(cc);
